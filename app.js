@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* --- 1. Active Navigation Link Detection --- */
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     navLinks.forEach(link => {
         const linkPath = link.getAttribute('href');
         if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    window.changeItemQty = function(id, change) {
+    window.changeItemQty = function (id, change) {
         const item = cart.find(i => i.id === id);
         if (item) {
             item.quantity += change;
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    window.removeCartItem = function(id) {
+    window.removeCartItem = function (id) {
         cart = cart.filter(i => i.id !== id);
         saveCart();
     };
@@ -329,4 +329,93 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 5500);
     }
 
+    /* --- 8. GLOBAL LIGHTBOX MODAL FOR FULLSCREEN IMAGES --- */
+    let lightboxModal = document.querySelector('.lightbox-modal');
+    if (!lightboxModal) {
+        lightboxModal = document.createElement('div');
+        lightboxModal.className = 'lightbox-modal';
+        lightboxModal.innerHTML = `
+            <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+            <button class="lightbox-nav lightbox-prev" aria-label="Anterior"><i class="ri-arrow-left-s-line"></i></button>
+            <button class="lightbox-nav lightbox-next" aria-label="Siguiente"><i class="ri-arrow-right-s-line"></i></button>
+            <div class="lightbox-wrapper">
+                <img src="" alt="" class="lightbox-img">
+                <div class="lightbox-caption"></div>
+            </div>
+        `;
+        document.body.appendChild(lightboxModal);
+    }
+
+    const lightboxImg = lightboxModal.querySelector('.lightbox-img');
+    const lightboxCaption = lightboxModal.querySelector('.lightbox-caption');
+    const lightboxClose = lightboxModal.querySelector('.lightbox-close');
+    const lightboxPrev = lightboxModal.querySelector('.lightbox-prev');
+    const lightboxNext = lightboxModal.querySelector('.lightbox-next');
+
+    let currentGallery = [];
+    let currentIndex = 0;
+
+    function updateLightboxImage(index) {
+        if (!currentGallery.length) return;
+        if (index < 0) index = currentGallery.length - 1;
+        if (index >= currentGallery.length) index = 0;
+        currentIndex = index;
+
+        const item = currentGallery[currentIndex];
+        lightboxImg.src = item.src;
+        lightboxCaption.textContent = item.caption || item.alt || 'Bodega Vicent Baeza (El Campello)';
+    }
+
+    function openLightbox(imagesList, index) {
+        currentGallery = imagesList;
+        updateLightboxImage(index);
+        lightboxModal.classList.add('active');
+    }
+
+    function closeLightbox() {
+        lightboxModal.classList.remove('active');
+    }
+
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightboxPrev) lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); updateLightboxImage(currentIndex - 1); });
+    if (lightboxNext) lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); updateLightboxImage(currentIndex + 1); });
+
+    lightboxModal.addEventListener('click', (e) => {
+        if (e.target === lightboxModal || e.target.classList.contains('lightbox-wrapper')) {
+            closeLightbox();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (!lightboxModal.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') updateLightboxImage(currentIndex - 1);
+        if (e.key === 'ArrowRight') updateLightboxImage(currentIndex + 1);
+    });
+
+    // Event Delegation for All Content Images
+    document.body.addEventListener('click', (e) => {
+        const targetImg = e.target.closest('.product-img-box img, .gallery-item img, .history-image-card img, .event-image img, img.lightboxable');
+        if (!targetImg) return;
+
+        const allPageImgs = Array.from(document.querySelectorAll('.product-img-box img, .gallery-item img, .history-image-card img, .event-image img, img.lightboxable'));
+
+        const imagesList = allPageImgs.map(img => {
+            let caption = img.alt || '';
+            const card = img.closest('.product-card');
+            if (card) {
+                const title = card.querySelector('.product-title');
+                const price = card.querySelector('.product-price');
+                if (title && price) {
+                    caption = `${title.textContent} — ${price.textContent}`;
+                }
+            }
+            return { src: img.src, caption: caption, alt: img.alt };
+        });
+
+        const clickIndex = allPageImgs.indexOf(targetImg);
+        openLightbox(imagesList, clickIndex >= 0 ? clickIndex : 0);
+    });
+
 });
+
