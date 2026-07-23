@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catas Esporádicas | Bodega Vicent Baeza (El Campello, Alicante)</title>
+    <meta name="description" content="Catas guiadas y maridajes esporádicos organizados en Bodega Vicent Baeza en El Campello. Infórmate de las próximas fechas VIP.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- RemixIcon Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Shipping Bar Announcement -->
+    <div class="announcement-bar">
+        <div class="container text-center">
+            <i class="ri-truck-line"></i> <strong>ENVÍO GRATUITO</strong> a toda España peninsular en pedidos superiores a 60 € • Entregas en 24-48 horas
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-container container">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/images/logo.png" alt="Bodega Vicent Baeza" class="logo-img" onerror="this.style.display='none'">
+                <span class="logo-emblem"><i class="ri-goblet-line"></i></span>
+                <div class="logo-text">
+                    <span class="brand-name">Bodega Vicent Baeza</span>
+                    <span class="brand-tagline">EL CAMPELLO • ALICANTE • DESDE 1975</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="tienda.html" class="nav-link">Tienda Online</a>
+                <a href="catas.html" class="nav-link active">Catas Esporádicas</a>
+                <a href="historia.html" class="nav-link">Nuestra Historia</a>
+                <a href="contacto.html" class="nav-link">Contacto</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="cart-trigger-btn" id="cartTriggerBtn" aria-label="Ver Carrito de Compra">
+                    <i class="ri-shopping-bag-3-line"></i>
+                    <span class="cart-badge" id="cartBadgeCount">0</span>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú">
+                    <i class="ri-menu-3-line"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header Banner -->
+    <section class="page-banner bg-dark text-center">
+        <div class="container">
+            <span class="section-subtitle"><i class="ri-calendar-event-line"></i> Eventos Pop-Up</span>
+            <h1 class="page-title">Catas Guiadas Esporádicas & Maridajes</h1>
+            <p class="section-desc">Organizamos experiencias gastronómicas privadas en nuestra bodega de El Campello en fechas seleccionadas a lo largo del año.</p>
+        </div>
+    </section>
+
+    <!-- Tastings Info & Waitlist -->
+    <section class="section-padding bg-dark-gradient">
+        <div class="container">
+            <div class="tasting-event-card">
+                <div class="event-image">
+                    <img src="assets/images/real/_LNF1360.JPG" alt="Próxima cata esporádica en Bodega Vicent Baeza">
+                    <div class="event-status-badge"><i class="ri-time-line"></i> Próxima Convocatoria Especial</div>
+                </div>
+
+                <div class="event-details">
+                    <span class="event-category">Cata Maridaje Exclusiva</span>
+                    <h3>'Vinos de la Terreta & Salazones Tradicionales'</h3>
+                    <p class="event-desc">Una experiencia sensorial privada donde maridaremos 4 vinos emblemáticos de Alicante (Monastrell, Fondillón y Blancos de Moscatel) con salazones locales de El Campello (hueva, mojama, bonita) y aperitivos artesanales.</p>
+                    
+                    <ul class="event-info-list">
+                        <li><i class="ri-map-pin-line"></i> <strong>Lugar:</strong> Bodega Vicent Baeza (Av. Generalitat 48, El Campello)</li>
+                        <li><i class="ri-group-line"></i> <strong>Aforo Reducido:</strong> Máximo 14 asistentes por sesión</li>
+                        <li><i class="ri-notification-3-line"></i> <strong>Reserva:</strong> Exclusiva por lista de espera previa</li>
+                    </ul>
+
+                    <div class="vip-waitlist-box">
+                        <h4><i class="ri-vip-crown-fill"></i> Únete a la Lista VIP para Próximas Fechas</h4>
+                        <p>Recibirás un aviso 48 horas antes de hacer públicas las entradas de la próxima cata organizada.</p>
+                        
+                        <form id="waitlistForm" class="waitlist-form">
+                            <input type="text" placeholder="Nombre completo" required class="form-control" style="background: #fff; color: #333;">
+                            <input type="email" placeholder="Correo Electrónico" required class="form-control" style="background: #fff; color: #333;">
+                            <input type="tel" placeholder="Teléfono / WhatsApp" required class="form-control" style="background: #fff; color: #333;">
+                            <button type="submit" class="btn btn-gold btn-block" style="margin-top: 10px;"><i class="ri-user-add-line"></i> Inscribirme en la Lista VIP</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <span class="logo-emblem"><i class="ri-goblet-line"></i></span>
+                <span class="brand-name">Bodega Vicent Baeza</span>
+                <p>El Campello, Alicante. Pasión por nuestros vinos y productos tradicionales desde 1975.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="tienda.html">Tienda Online</a></li>
+                    <li><a href="catas.html">Catas Esporádicas</a></li>
+                    <li><a href="historia.html">Nuestra Historia</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4>Contacto</h4>
+                <p style="font-size: 0.85rem; margin-bottom: 15px;">Av. Generalitat 48, 03560 El Campello • Tel: 96 563 02 53</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="ri-facebook-circle-line"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="ri-whatsapp-line"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 1975 - 2026 Bodega Vicent Baeza (El Campello, Alicante). Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SLIDE-OUT CART DRAWER -->
+    <div class="cart-drawer-overlay" id="cartOverlay">
+        <div class="cart-drawer" id="cartDrawer">
+            <div class="cart-drawer-header">
+                <h3><i class="ri-shopping-bag-3-line"></i> Carrito de Compra</h3>
+                <button class="cart-close-btn" id="cartCloseBtn">&times;</button>
+            </div>
+
+            <div class="free-shipping-bar">
+                <p id="freeShippingText">¡Añade <strong>60,00 €</strong> más para <strong>ENVÍO GRATUITO</strong> a España!</p>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="shippingProgressFill" style="width: 0%;"></div>
+                </div>
+            </div>
+
+            <div class="cart-items-list" id="cartItemsList"></div>
+
+            <div class="cart-drawer-footer">
+                <div class="cart-summary-line">
+                    <span>Subtotal:</span>
+                    <strong id="cartSubtotal">0,00 €</strong>
+                </div>
+                <div class="cart-summary-line">
+                    <span>Gastos de Envío:</span>
+                    <span id="cartShippingCost">4,95 €</span>
+                </div>
+                <div class="cart-summary-line total-line">
+                    <span>TOTAL A PAGAR:</span>
+                    <strong id="cartGrandTotal">0,00 €</strong>
+                </div>
+                <button class="btn btn-gold btn-block btn-lg" id="checkoutBtn" disabled>
+                    <i class="ri-lock-2-line"></i> Tramitar Pedido Seguro
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHECKOUT MODAL -->
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="modal-card" style="max-width: 650px;">
+            <button class="modal-close" id="checkoutModalClose">&times;</button>
+            <div class="modal-body" style="padding: 35px; color: #fff;">
+                <div class="modal-header-custom text-center" style="margin-bottom: 25px;">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-gold);">
+                        <i class="ri-shield-check-line"></i> Finalizar Pedido - Bodega Vicent Baeza
+                    </h3>
+                    <p style="font-size: 0.9rem; color: var(--color-text-light-muted);">Envíos a toda España en 24-48 horas.</p>
+                </div>
+
+                <form id="checkoutForm" class="checkout-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Nombre y Apellidos</label>
+                            <input type="text" id="shipName" class="form-control" placeholder="Ej. Pedro Pérez" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Correo Electrónico</label>
+                            <input type="email" id="shipEmail" class="form-control" placeholder="pedro@ejemplo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Teléfono</label>
+                            <input type="tel" id="shipPhone" class="form-control" placeholder="+34 600 000 000" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Código Postal</label>
+                            <input type="text" id="shipZip" class="form-control" placeholder="Ej: 03560" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 15px;">
+                        <label>Dirección de Envío Completa (España)</label>
+                        <input type="text" id="shipAddress" class="form-control" placeholder="Calle, Número, Piso..." required>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 15px;">
+                        <label>Método de Pago Preferido</label>
+                        <select id="shipPayment" class="form-control">
+                            <option value="card">💳 Tarjeta de Crédito / Débito (Visa, Mastercard)</option>
+                            <option value="bizum">📱 Bizum (Pago Inmediato)</option>
+                            <option value="transfer">🏦 Transferencia Bancaria</option>
+                        </select>
+                    </div>
+
+                    <div class="checkout-summary-box" style="margin-top: 20px; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; border: 1px solid var(--color-gold);">
+                        <div style="display:flex; justify-content:space-between; font-size:1.1rem; font-weight:bold;">
+                            <span>Importe Total:</span>
+                            <span id="modalFinalTotal" style="color: var(--color-gold);">0,00 €</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-gold btn-block btn-lg" style="margin-top: 20px;">
+                        <i class="ri-check-double-line"></i> Confirmar y Realizar Pedido
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-notification" id="toastNotification">
+        <i class="ri-checkbox-circle-fill"></i>
+        <div class="toast-text">
+            <h4 id="toastTitle">Inscripción Registrada</h4>
+            <p id="toastMsg">Te notificaremos para la próxima cata.</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
