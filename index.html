@@ -26,7 +26,7 @@
 
     <!-- Shipping Bar Announcement -->
     <div class="announcement-bar">
-        <div class="container text-center">
+        <div class="container text-center" data-i18n="announcement">
             <i class="ri-truck-line"></i> <strong>ENVÍO GRATUITO</strong> a toda España peninsular en pedidos superiores
             a 60 € • Entregas en 24-48 horas
         </div>
@@ -46,11 +46,24 @@
             </a>
 
             <nav class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link active">Inicio</a>
-                <a href="tienda.html" class="nav-link">Tienda Online</a>
-                <a href="catas.html" class="nav-link">Catas Esporádicas</a>
-                <a href="historia.html" class="nav-link">Nuestra Historia</a>
-                <a href="contacto.html" class="nav-link">Contacto</a>
+                <a href="index.html" class="nav-link active" data-i18n="nav_home">Inicio</a>
+                <a href="tienda.html" class="nav-link" data-i18n="nav_shop">Tienda Online</a>
+                <a href="catas.html" class="nav-link" data-i18n="nav_tastings">Catas Esporádicas</a>
+                <a href="historia.html" class="nav-link" data-i18n="nav_history">Nuestra Historia</a>
+                <a href="contacto.html" class="nav-link" data-i18n="nav_contact">Contacto</a>
+
+                <!-- Language Selector -->
+                <div class="lang-selector">
+                    <button id="langSelectorBtn" aria-label="Seleccionar idioma">🇪🇸 Español <i
+                            class="ri-arrow-down-s-line"></i></button>
+                    <div id="langDropdown">
+                        <div class="lang-option active" data-lang="es"><span class="lang-flag">🇪🇸</span> Español</div>
+                        <div class="lang-option" data-lang="ca"><span class="lang-flag">🏴</span> Català</div>
+                        <div class="lang-option" data-lang="en"><span class="lang-flag">🇬🇧</span> English</div>
+                        <div class="lang-option" data-lang="fr"><span class="lang-flag">🇫🇷</span> Français</div>
+                        <div class="lang-option" data-lang="ru"><span class="lang-flag">🇷🇺</span> Русский</div>
+                    </div>
+                </div>
             </nav>
 
             <div class="header-actions">
@@ -74,18 +87,19 @@
         </div>
 
         <div class="hero-content container">
-            <div class="badge-heritage">
+            <div class="badge-heritage" data-i18n="hero_badge">
                 <i class="ri-map-pin-2-fill"></i> Tradición Alicantina en El Campello desde 1975
             </div>
-            <h1 class="hero-title">El auténtico sabor de Alicante,<br><em>directo a tu mesa</em></h1>
-            <p class="hero-subtitle">Vinos D.O. Alicante, Monastrell de autor, Vermouth artesanal de grifo y gastronomía
-                local. Envíos garantizados a toda España.</p>
+            <h1 class="hero-title" data-i18n="hero_title">El auténtico sabor de Alicante,<br><em>directo a tu mesa</em>
+            </h1>
+            <p class="hero-subtitle" data-i18n="hero_subtitle">Vinos D.O. Alicante, Monastrell de autor, Vermouth
+                artesanal de grifo y gastronomía local. Envíos garantizados a toda España.</p>
 
             <div class="hero-buttons">
-                <a href="tienda.html" class="btn btn-gold btn-lg"><i class="ri-shopping-bag-line"></i> Ir a la Tienda
-                    Online</a>
-                <a href="historia.html" class="btn btn-outline btn-lg"><i class="ri-history-line"></i> Nuestra
-                    Historia</a>
+                <a href="tienda.html" class="btn btn-gold btn-lg" data-i18n="hero_btn_shop"><i
+                        class="ri-shopping-bag-line"></i> Ir a la Tienda Online</a>
+                <a href="historia.html" class="btn btn-outline btn-lg" data-i18n="hero_btn_history"><i
+                        class="ri-history-line"></i> Nuestra Historia</a>
             </div>
 
             <!-- Features Trust Ribbon -->
@@ -93,22 +107,22 @@
                 <div class="trust-item">
                     <i class="ri-truck-fill"></i>
                     <div>
-                        <strong>Envío 24/48h</strong>
-                        <span>Toda España Peninsular</span>
+                        <strong data-i18n="trust_shipping_title">Envío 24/48h</strong>
+                        <span data-i18n="trust_shipping_sub">Toda España Peninsular</span>
                     </div>
                 </div>
                 <div class="trust-item">
                     <i class="ri-shield-check-fill"></i>
                     <div>
-                        <strong>Embalaje Anti-Roturas</strong>
-                        <span>100% Protegido y Seguro</span>
+                        <strong data-i18n="trust_packaging_title">Embalaje Anti-Roturas</strong>
+                        <span data-i18n="trust_packaging_sub">100% Protegido y Seguro</span>
                     </div>
                 </div>
                 <div class="trust-item">
                     <i class="ri-store-2-fill"></i>
                     <div>
-                        <strong>Desde 1975</strong>
-                        <span>Comercio de El Campello</span>
+                        <strong data-i18n="trust_since_title">Desde 1975</strong>
+                        <span data-i18n="trust_since_sub">Comercio de El Campello</span>
                     </div>
                 </div>
             </div>
@@ -118,14 +132,15 @@
     <!-- Short Intro & Heritage Teaser -->
     <section class="section-padding bg-dark text-center">
         <div class="container" style="max-width: 800px;">
-            <span class="section-subtitle"><i class="ri-award-line"></i> Más de 50 años de tradición</span>
-            <h2 class="section-title">Pasión por los Vinos & Productos de la Terreta</h2>
-            <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; margin: 20px 0 30px;">
+            <span class="section-subtitle"><i class="ri-award-line"></i> <span data-i18n="intro_subtitle">Más de 50 años
+                    de tradición</span></span>
+            <h2 class="section-title" data-i18n="intro_title">Pasión por los Vinos &amp; Productos de la Terreta</h2>
+            <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; margin: 20px 0 30px;" data-i18n="intro_text">
                 Desde 1975 seleccionamos personalmente los mejores vinos a granel y embotellados de Alicante, vermouths
                 artesanales, mistelas de Moscatel y delicatessen de nuestra comarca.
             </p>
-            <a href="historia.html" class="btn btn-outline"><i class="ri-arrow-right-line"></i> Conoce Más Sobre Nuestra
-                Historia</a>
+            <a href="historia.html" class="btn btn-outline" data-i18n="intro_btn"><i class="ri-arrow-right-line"></i>
+                Conoce Más Sobre Nuestra Historia</a>
         </div>
     </section>
 
@@ -133,8 +148,9 @@
     <section class="section-padding bg-dark-gradient">
         <div class="container">
             <div class="section-header text-center light-text">
-                <span class="section-subtitle"><i class="ri-star-line"></i> Destacados de la Bodega</span>
-                <h2 class="section-title">Los Favoritos de Nuestros Clientes</h2>
+                <span class="section-subtitle"><i class="ri-star-line"></i> <span
+                        data-i18n="featured_subtitle">Destacados de la Bodega</span></span>
+                <h2 class="section-title" data-i18n="featured_title">Los Favoritos de Nuestros Clientes</h2>
                 <div class="gold-separator"><span>◆</span></div>
             </div>
 
@@ -218,14 +234,16 @@
     <!-- Tastings & Visit Teaser Banner -->
     <section class="section-padding bg-dark">
         <div class="container text-center">
-            <span class="section-subtitle"><i class="ri-calendar-event-line"></i> Eventos Pop-Up</span>
-            <h2 class="section-title">Catas Guiadas Esporádicas en El Campello</h2>
-            <p style="color: rgba(255,255,255,0.75); max-width: 650px; margin: 15px auto 30px;">
-                Organizamos de manera esporádica jornadas de maridaje de vinos de Alicante con salazones tradicionales
-                en nuestra bodega física.
+            <span class="section-subtitle"><i class="ri-calendar-event-line"></i> <span
+                    data-i18n="tastings_teaser_subtitle">Experiencias Exclusivas</span></span>
+            <h2 class="section-title" data-i18n="tastings_teaser_title">Catas Esporádicas en Bodega</h2>
+            <p style="color: rgba(255,255,255,0.75); max-width: 650px; margin: 15px auto 30px;"
+                data-i18n="tastings_teaser_text">
+                Organizamos catas de maridaje puntuales en nuestra bodega de El Campello. Inscríbete en nuestra lista
+                VIP para ser el primero en saberlo.
             </p>
-            <a href="catas.html" class="btn btn-outline btn-lg"><i class="ri-user-add-line"></i> Apuntarse a la Lista
-                VIP de Catas</a>
+            <a href="catas.html" class="btn btn-outline btn-lg" data-i18n="tastings_teaser_btn"><i
+                    class="ri-calendar-event-line"></i> Ver Próximas Catas</a>
         </div>
     </section>
 
@@ -235,22 +253,23 @@
             <div class="footer-brand">
                 <span class="logo-emblem"><i class="ri-goblet-line"></i></span>
                 <span class="brand-name">Bodega Vicent Baeza</span>
-                <p>El Campello, Alicante. Pasión por nuestros vinos y productos tradicionales desde 1975.</p>
+                <p data-i18n="footer_tagline">El Campello, Alicante. Pasión por nuestros vinos y productos tradicionales
+                    desde 1975.</p>
             </div>
 
             <div class="footer-links">
-                <h4>Navegación</h4>
+                <h4 data-i18n="footer_nav_title">Navegación</h4>
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="tienda.html">Tienda Online</a></li>
-                    <li><a href="catas.html">Catas Esporádicas</a></li>
-                    <li><a href="historia.html">Nuestra Historia</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+                    <li><a href="tienda.html" data-i18n="nav_shop">Tienda Online</a></li>
+                    <li><a href="catas.html" data-i18n="nav_tastings">Catas Esporádicas</a></li>
+                    <li><a href="historia.html" data-i18n="nav_history">Nuestra Historia</a></li>
+                    <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
                 </ul>
             </div>
 
             <div class="footer-social">
-                <h4>Contacto</h4>
+                <h4 data-i18n="footer_contact_title">Contacto</h4>
                 <p style="font-size: 0.85rem; margin-bottom: 15px;">Av. Generalitat 48, 03560 El Campello • Tel: 96 563
                     02 53</p>
                 <div class="social-icons">
@@ -379,6 +398,7 @@
         </div>
     </div>
 
+    <script src="i18n.js"></script>
     <script src="app.js"></script>
 </body>
 

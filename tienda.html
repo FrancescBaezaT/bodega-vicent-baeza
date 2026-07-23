@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda Online | Bodega Vicent Baeza (El Campello, Alicante)</title>
-    <meta name="description" content="Comprar vinos D.O. Alicante, Monastrell, Vermouth artesanal, Mistela de Moscatel y productos gourmet con envío a toda España.">
-    
+    <meta name="description"
+        content="Comprar vinos D.O. Alicante, Monastrell, Vermouth artesanal, Mistela de Moscatel y productos gourmet con envío a toda España.">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- RemixIcon Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <!-- Shipping Bar Announcement -->
     <div class="announcement-bar">
         <div class="container text-center">
-            <i class="ri-truck-line"></i> <strong>ENVÍO GRATUITO</strong> a toda España peninsular en pedidos superiores a 60 € • Entregas en 24-48 horas
+            <i class="ri-truck-line"></i> <strong>ENVÍO GRATUITO</strong> a toda España peninsular en pedidos superiores
+            a 60 € • Entregas en 24-48 horas
         </div>
     </div>
 
@@ -30,7 +36,8 @@
     <header class="site-header" id="siteHeader">
         <div class="header-container container">
             <a href="index.html" class="brand-logo">
-                <img src="assets/images/logo.png" alt="Bodega Vicent Baeza" class="logo-img" onerror="this.style.display='none'">
+                <img src="assets/images/logo.png" alt="Bodega Vicent Baeza" class="logo-img"
+                    onerror="this.style.display='none'">
                 <span class="logo-emblem"><i class="ri-goblet-line"></i></span>
                 <div class="logo-text">
                     <span class="brand-name">Bodega Vicent Baeza</span>
@@ -39,11 +46,24 @@
             </a>
 
             <nav class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link">Inicio</a>
-                <a href="tienda.html" class="nav-link active">Tienda Online</a>
-                <a href="catas.html" class="nav-link">Catas Esporádicas</a>
-                <a href="historia.html" class="nav-link">Nuestra Historia</a>
-                <a href="contacto.html" class="nav-link">Contacto</a>
+                <a href="index.html" class="nav-link" data-i18n="nav_home">Inicio</a>
+                <a href="tienda.html" class="nav-link active" data-i18n="nav_shop">Tienda Online</a>
+                <a href="catas.html" class="nav-link" data-i18n="nav_tastings">Catas Esporádicas</a>
+                <a href="historia.html" class="nav-link" data-i18n="nav_history">Nuestra Historia</a>
+                <a href="contacto.html" class="nav-link" data-i18n="nav_contact">Contacto</a>
+
+                <!-- Language Selector -->
+                <div class="lang-selector">
+                    <button id="langSelectorBtn" aria-label="Seleccionar idioma">🇪🇸 Español <i
+                            class="ri-arrow-down-s-line"></i></button>
+                    <div id="langDropdown">
+                        <div class="lang-option active" data-lang="es"><span class="lang-flag">🇪🇸</span> Español</div>
+                        <div class="lang-option" data-lang="ca"><span class="lang-flag">🏴</span> Català</div>
+                        <div class="lang-option" data-lang="en"><span class="lang-flag">🇬🇧</span> English</div>
+                        <div class="lang-option" data-lang="fr"><span class="lang-flag">🇫🇷</span> Français</div>
+                        <div class="lang-option" data-lang="ru"><span class="lang-flag">🇷🇺</span> Русский</div>
+                    </div>
+                </div>
             </nav>
 
             <div class="header-actions">
@@ -61,9 +81,11 @@
     <!-- Page Header Banner -->
     <section class="page-banner bg-dark text-center">
         <div class="container">
-            <span class="section-subtitle"><i class="ri-shopping-bag-3-line"></i> Venta Directa Online</span>
-            <h1 class="page-title">Catálogo Completo de Vinos & Gourmet</h1>
-            <p class="section-desc">Selección directa desde nuestra bodega física en El Campello (Alicante). Envíos a toda España con embalaje especial de máxima protección.</p>
+            <span class="section-subtitle"><i class="ri-shopping-bag-3-line"></i> <span
+                    data-i18n="shop_hero_badge">Venta Directa Online</span></span>
+            <h1 class="page-title" data-i18n="shop_hero_title">Nuestra Selección de Productos</h1>
+            <p class="section-desc">Selección directa desde nuestra bodega física en El Campello (Alicante). Envíos a
+                toda España con embalaje especial de máxima protección.</p>
         </div>
     </section>
 
@@ -75,7 +97,8 @@
             <div class="store-controls-bar">
                 <div class="search-box">
                     <i class="ri-search-line"></i>
-                    <input type="text" id="searchInput" placeholder="Buscar por producto, varietal o tipo..." class="search-input">
+                    <input type="text" id="searchInput" placeholder="Buscar por producto, varietal o tipo..."
+                        class="search-input">
                 </div>
 
                 <div class="sort-box">
@@ -102,7 +125,8 @@
             <div class="product-grid" id="productGrid">
 
                 <!-- Product 1 -->
-                <div class="product-card" data-category="vino" data-price="14.50" data-name="Monastrell Selección Vicent Baeza 2020">
+                <div class="product-card" data-category="vino" data-price="14.50"
+                    data-name="Monastrell Selección Vicent Baeza 2020">
                     <div class="product-badge">D.O. Alicante</div>
                     <div class="product-img-box">
                         <img src="assets/images/real/_LNF1241.JPG" alt="Monastrell Selección Vicent Baeza">
@@ -110,15 +134,13 @@
                     <div class="product-info">
                         <span class="product-sub">Vino Tinto • Monastrell 100%</span>
                         <h3 class="product-title">Monastrell Selección Vicent Baeza 2020</h3>
-                        <p class="product-desc">Cuerpo mediterráneo, intenso, con aromas de frutos negros maduros, toques especiados y tanino redondo.</p>
+                        <p class="product-desc">Cuerpo mediterráneo, intenso, con aromas de frutos negros maduros,
+                            toques especiados y tanino redondo.</p>
                         <div class="product-footer">
                             <span class="product-price">14,50 €</span>
-                            <button class="btn btn-gold btn-sm add-to-cart-btn" 
-                                data-id="p1" 
-                                data-name="Monastrell Selección Vicent Baeza 2020" 
-                                data-price="14.50" 
-                                data-category="Vino Tinto"
-                                data-img="assets/images/real/_LNF1241.JPG">
+                            <button class="btn btn-gold btn-sm add-to-cart-btn" data-id="p1"
+                                data-name="Monastrell Selección Vicent Baeza 2020" data-price="14.50"
+                                data-category="Vino Tinto" data-img="assets/images/real/_LNF1241.JPG">
                                 <i class="ri-shopping-cart-line"></i> Añadir
                             </button>
                         </div>
@@ -126,7 +148,8 @@
                 </div>
 
                 <!-- Product 2 -->
-                <div class="product-card" data-category="vermouth" data-price="9.80" data-name="Vermouth Artesanal Rojo de El Campello">
+                <div class="product-card" data-category="vermouth" data-price="9.80"
+                    data-name="Vermouth Artesanal Rojo de El Campello">
                     <div class="product-badge gold">Especialidad Casa</div>
                     <div class="product-img-box">
                         <img src="assets/images/real/_LNF1250.JPG" alt="Vermouth Artesanal Rojo de El Campello">
@@ -134,15 +157,13 @@
                     <div class="product-info">
                         <span class="product-sub">Vermouth Rojo Artesanal • 1 Litro</span>
                         <h3 class="product-title">Vermouth Artesanal Rojo de El Campello</h3>
-                        <p class="product-desc">Elaborado según la receta tradicional de la familia Baeza desde 1975 con maceración de hierbas autóctonas.</p>
+                        <p class="product-desc">Elaborado según la receta tradicional de la familia Baeza desde 1975 con
+                            maceración de hierbas autóctonas.</p>
                         <div class="product-footer">
                             <span class="product-price">9,80 €</span>
-                            <button class="btn btn-gold btn-sm add-to-cart-btn" 
-                                data-id="p2" 
-                                data-name="Vermouth Artesanal Rojo de El Campello (1L)" 
-                                data-price="9.80" 
-                                data-category="Vermouth"
-                                data-img="assets/images/real/_LNF1250.JPG">
+                            <button class="btn btn-gold btn-sm add-to-cart-btn" data-id="p2"
+                                data-name="Vermouth Artesanal Rojo de El Campello (1L)" data-price="9.80"
+                                data-category="Vermouth" data-img="assets/images/real/_LNF1250.JPG">
                                 <i class="ri-shopping-cart-line"></i> Añadir
                             </button>
                         </div>
@@ -150,7 +171,8 @@
                 </div>
 
                 <!-- Product 3 -->
-                <div class="product-card" data-category="vermouth" data-price="11.20" data-name="Mistela Dorada Moscatel de la Marina">
+                <div class="product-card" data-category="vermouth" data-price="11.20"
+                    data-name="Mistela Dorada Moscatel de la Marina">
                     <div class="product-badge">Dulce Alicante</div>
                     <div class="product-img-box">
                         <img src="assets/images/real/_LNF1260.JPG" alt="Mistela Dorada de Moscatel">
@@ -158,15 +180,13 @@
                     <div class="product-info">
                         <span class="product-sub">Mistela Licorosa • Moscatel de Alejandría</span>
                         <h3 class="product-title">Mistela Dorada Moscatel de la Marina</h3>
-                        <p class="product-desc">Dulce natural inolvidable, perfume de flor de azahar, miel y pasas. Ideal para postres o aperitivos.</p>
+                        <p class="product-desc">Dulce natural inolvidable, perfume de flor de azahar, miel y pasas.
+                            Ideal para postres o aperitivos.</p>
                         <div class="product-footer">
                             <span class="product-price">11,20 €</span>
-                            <button class="btn btn-gold btn-sm add-to-cart-btn" 
-                                data-id="p3" 
-                                data-name="Mistela Dorada Moscatel de la Marina" 
-                                data-price="11.20" 
-                                data-category="Mistela"
-                                data-img="assets/images/real/_LNF1260.JPG">
+                            <button class="btn btn-gold btn-sm add-to-cart-btn" data-id="p3"
+                                data-name="Mistela Dorada Moscatel de la Marina" data-price="11.20"
+                                data-category="Mistela" data-img="assets/images/real/_LNF1260.JPG">
                                 <i class="ri-shopping-cart-line"></i> Añadir
                             </button>
                         </div>
@@ -174,7 +194,8 @@
                 </div>
 
                 <!-- Product 4 -->
-                <div class="product-card" data-category="vino" data-price="58.00" data-name="Fondillón Alicante Reserva Especial">
+                <div class="product-card" data-category="vino" data-price="58.00"
+                    data-name="Fondillón Alicante Reserva Especial">
                     <div class="product-badge premium">Joyas de Alicante</div>
                     <div class="product-img-box">
                         <img src="assets/images/real/_LNF1270.JPG" alt="Fondillón Alicante Reserva Especial">
@@ -182,15 +203,13 @@
                     <div class="product-info">
                         <span class="product-sub">Vino Único Mundial • Solera 25 Años</span>
                         <h3 class="product-title">Fondillón Alicante Reserva Especial (50cl)</h3>
-                        <p class="product-desc">El mítico vino alicantino 100% Monastrell sobremadurada en cepa. Complejidad sublime con notas de avellana.</p>
+                        <p class="product-desc">El mítico vino alicantino 100% Monastrell sobremadurada en cepa.
+                            Complejidad sublime con notas de avellana.</p>
                         <div class="product-footer">
                             <span class="product-price">58,00 €</span>
-                            <button class="btn btn-gold btn-sm add-to-cart-btn" 
-                                data-id="p4" 
-                                data-name="Fondillón Alicante Reserva Especial (50cl)" 
-                                data-price="58.00" 
-                                data-category="Fondillón"
-                                data-img="assets/images/real/_LNF1270.JPG">
+                            <button class="btn btn-gold btn-sm add-to-cart-btn" data-id="p4"
+                                data-name="Fondillón Alicante Reserva Especial (50cl)" data-price="58.00"
+                                data-category="Fondillón" data-img="assets/images/real/_LNF1270.JPG">
                                 <i class="ri-shopping-cart-line"></i> Añadir
                             </button>
                         </div>
@@ -198,7 +217,8 @@
                 </div>
 
                 <!-- Product 5 -->
-                <div class="product-card" data-category="licores" data-price="16.50" data-name="Herbero Tradicional de la Sierra de Mariola">
+                <div class="product-card" data-category="licores" data-price="16.50"
+                    data-name="Herbero Tradicional de la Sierra de Mariola">
                     <div class="product-badge">Tradición de la Sierra</div>
                     <div class="product-img-box">
                         <img src="assets/images/real/_LNF1280.JPG" alt="Herbero de la Sierra de Mariola">
@@ -206,15 +226,13 @@
                     <div class="product-info">
                         <span class="product-sub">Licor de Hierbas Autóctono</span>
                         <h3 class="product-title">Herbero Tradicional de la Sierra de Mariola</h3>
-                        <p class="product-desc">Maceración artesanal de rabo de gato, timó real, salvia y manzanilla autóctona. Digestivo tradicional.</p>
+                        <p class="product-desc">Maceración artesanal de rabo de gato, timó real, salvia y manzanilla
+                            autóctona. Digestivo tradicional.</p>
                         <div class="product-footer">
                             <span class="product-price">16,50 €</span>
-                            <button class="btn btn-gold btn-sm add-to-cart-btn" 
-                                data-id="p5" 
-                                data-name="Herbero Tradicional de la Sierra de Mariola" 
-                                data-price="16.50" 
-                                data-category="Licor"
-                                data-img="assets/images/real/_LNF1280.JPG">
+                            <button class="btn btn-gold btn-sm add-to-cart-btn" data-id="p5"
+                                data-name="Herbero Tradicional de la Sierra de Mariola" data-price="16.50"
+                                data-category="Licor" data-img="assets/images/real/_LNF1280.JPG">
                                 <i class="ri-shopping-cart-line"></i> Añadir
                             </button>
                         </div>
@@ -222,7 +240,8 @@
                 </div>
 
                 <!-- Product 6 -->
-                <div class="product-card" data-category="gourmet" data-price="39.90" data-name="Aceite de Oliva Virgen Extra Garrafa 5L">
+                <div class="product-card" data-category="gourmet" data-price="39.90"
+                    data-name="Aceite de Oliva Virgen Extra Garrafa 5L">
                     <div class="product-badge">Ecológico</div>
                     <div class="product-img-box">
                         <img src="assets/images/real/_LNF1308.JPG" alt="Aceite de Oliva Virgen Extra El Campello">
@@ -230,15 +249,13 @@
                     <div class="product-info">
                         <span class="product-sub">AOVE Extracción en Frío • Garrafa 5L</span>
                         <h3 class="product-title">Aceite de Oliva Virgen Extra de Montaña</h3>
-                        <p class="product-desc">Aceite virgen extra de olivas alfafarenca y villalonga. Sabor frutado intenso y amargor equilibrado.</p>
+                        <p class="product-desc">Aceite virgen extra de olivas alfafarenca y villalonga. Sabor frutado
+                            intenso y amargor equilibrado.</p>
                         <div class="product-footer">
                             <span class="product-price">39,90 €</span>
-                            <button class="btn btn-gold btn-sm add-to-cart-btn" 
-                                data-id="p6" 
-                                data-name="Aceite de Oliva Virgen Extra Garrafa 5L" 
-                                data-price="39.90" 
-                                data-category="Aceite AOVE"
-                                data-img="assets/images/real/_LNF1308.JPG">
+                            <button class="btn btn-gold btn-sm add-to-cart-btn" data-id="p6"
+                                data-name="Aceite de Oliva Virgen Extra Garrafa 5L" data-price="39.90"
+                                data-category="Aceite AOVE" data-img="assets/images/real/_LNF1308.JPG">
                                 <i class="ri-shopping-cart-line"></i> Añadir
                             </button>
                         </div>
@@ -246,7 +263,8 @@
                 </div>
 
                 <!-- Product 7 -->
-                <div class="product-card" data-category="gourmet" data-price="12.50" data-name="Miel Pura de Azahar & Romero">
+                <div class="product-card" data-category="gourmet" data-price="12.50"
+                    data-name="Miel Pura de Azahar & Romero">
                     <div class="product-badge">100% Pura Artesana</div>
                     <div class="product-img-box">
                         <img src="assets/images/real/_LNF1330.JPG" alt="Miel de Azahar y Romero">
@@ -254,15 +272,13 @@
                     <div class="product-info">
                         <span class="product-sub">Miel Cruda Local • Tarro 1kg</span>
                         <h3 class="product-title">Miel Pura de Azahar & Romero</h3>
-                        <p class="product-desc">Miel recolectada artesanalmente en los azahares y sierras alicantinas. Aroma y textura natural intacta.</p>
+                        <p class="product-desc">Miel recolectada artesanalmente en los azahares y sierras alicantinas.
+                            Aroma y textura natural intacta.</p>
                         <div class="product-footer">
                             <span class="product-price">12,50 €</span>
-                            <button class="btn btn-gold btn-sm add-to-cart-btn" 
-                                data-id="p7" 
-                                data-name="Miel Pura de Azahar & Romero (1kg)" 
-                                data-price="12.50" 
-                                data-category="Miel Pura"
-                                data-img="assets/images/real/_LNF1330.JPG">
+                            <button class="btn btn-gold btn-sm add-to-cart-btn" data-id="p7"
+                                data-name="Miel Pura de Azahar & Romero (1kg)" data-price="12.50"
+                                data-category="Miel Pura" data-img="assets/images/real/_LNF1330.JPG">
                                 <i class="ri-shopping-cart-line"></i> Añadir
                             </button>
                         </div>
@@ -270,7 +286,8 @@
                 </div>
 
                 <!-- Product 8 -->
-                <div class="product-card" data-category="gourmet vino" data-price="45.00" data-name="Pack Aperitivo Tradicional Vicent Baeza">
+                <div class="product-card" data-category="gourmet vino" data-price="45.00"
+                    data-name="Pack Aperitivo Tradicional Vicent Baeza">
                     <div class="product-badge gold">Pack Ahorro Especial</div>
                     <div class="product-img-box">
                         <img src="assets/images/real/_LNF1359.JPG" alt="Pack Experiencia Aperitivo Alicantino">
@@ -278,15 +295,13 @@
                     <div class="product-info">
                         <span class="product-sub">Lote Gastronómico • Ideal Regalo</span>
                         <h3 class="product-title">Pack Aperitivo Tradicional 'Vicent Baeza'</h3>
-                        <p class="product-desc">Incluye: 1 Botella Monastrell 2020 + 1 Botella Vermouth Rojo 1L + 1 Tarro Miel 500g + 1 Bolsa Almendras Marcona Tostadas.</p>
+                        <p class="product-desc">Incluye: 1 Botella Monastrell 2020 + 1 Botella Vermouth Rojo 1L + 1
+                            Tarro Miel 500g + 1 Bolsa Almendras Marcona Tostadas.</p>
                         <div class="product-footer">
                             <span class="product-price">45,00 €</span>
-                            <button class="btn btn-gold btn-sm add-to-cart-btn" 
-                                data-id="p8" 
-                                data-name="Pack Aperitivo Tradicional Vicent Baeza" 
-                                data-price="45.00" 
-                                data-category="Pack Regalo"
-                                data-img="assets/images/real/_LNF1359.JPG">
+                            <button class="btn btn-gold btn-sm add-to-cart-btn" data-id="p8"
+                                data-name="Pack Aperitivo Tradicional Vicent Baeza" data-price="45.00"
+                                data-category="Pack Regalo" data-img="assets/images/real/_LNF1359.JPG">
                                 <i class="ri-shopping-cart-line"></i> Añadir
                             </button>
                         </div>
@@ -319,7 +334,8 @@
 
             <div class="footer-social">
                 <h4>Contacto</h4>
-                <p style="font-size: 0.85rem; margin-bottom: 15px;">Av. Generalitat 48, 03560 El Campello • Tel: 96 563 02 53</p>
+                <p style="font-size: 0.85rem; margin-bottom: 15px;">Av. Generalitat 48, 03560 El Campello • Tel: 96 563
+                    02 53</p>
                 <div class="social-icons">
                     <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
                     <a href="#" aria-label="Facebook"><i class="ri-facebook-circle-line"></i></a>
@@ -341,7 +357,8 @@
             </div>
 
             <div class="free-shipping-bar">
-                <p id="freeShippingText">¡Añade <strong>60,00 €</strong> más para <strong>ENVÍO GRATUITO</strong> a España!</p>
+                <p id="freeShippingText">¡Añade <strong>60,00 €</strong> más para <strong>ENVÍO GRATUITO</strong> a
+                    España!</p>
                 <div class="progress-bar-bg">
                     <div class="progress-bar-fill" id="shippingProgressFill" style="width: 0%;"></div>
                 </div>
@@ -378,22 +395,26 @@
                     <h3 style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-gold);">
                         <i class="ri-shield-check-line"></i> Finalizar Pedido - Bodega Vicent Baeza
                     </h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-light-muted);">Envíos a toda España en 24-48 horas.</p>
+                    <p style="font-size: 0.9rem; color: var(--color-text-light-muted);">Envíos a toda España en 24-48
+                        horas.</p>
                 </div>
 
                 <form id="checkoutForm" class="checkout-form">
                     <div class="form-grid">
                         <div class="form-group">
                             <label>Nombre y Apellidos</label>
-                            <input type="text" id="shipName" class="form-control" placeholder="Ej. Pedro Pérez" required>
+                            <input type="text" id="shipName" class="form-control" placeholder="Ej. Pedro Pérez"
+                                required>
                         </div>
                         <div class="form-group">
                             <label>Correo Electrónico</label>
-                            <input type="email" id="shipEmail" class="form-control" placeholder="pedro@ejemplo.com" required>
+                            <input type="email" id="shipEmail" class="form-control" placeholder="pedro@ejemplo.com"
+                                required>
                         </div>
                         <div class="form-group">
                             <label>Teléfono</label>
-                            <input type="tel" id="shipPhone" class="form-control" placeholder="+34 600 000 000" required>
+                            <input type="tel" id="shipPhone" class="form-control" placeholder="+34 600 000 000"
+                                required>
                         </div>
                         <div class="form-group">
                             <label>Código Postal</label>
@@ -403,7 +424,8 @@
 
                     <div class="form-group" style="margin-top: 15px;">
                         <label>Dirección de Envío Completa (España)</label>
-                        <input type="text" id="shipAddress" class="form-control" placeholder="Calle, Número, Piso..." required>
+                        <input type="text" id="shipAddress" class="form-control" placeholder="Calle, Número, Piso..."
+                            required>
                     </div>
 
                     <div class="form-group" style="margin-top: 15px;">
@@ -415,7 +437,8 @@
                         </select>
                     </div>
 
-                    <div class="checkout-summary-box" style="margin-top: 20px; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; border: 1px solid var(--color-gold);">
+                    <div class="checkout-summary-box"
+                        style="margin-top: 20px; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; border: 1px solid var(--color-gold);">
                         <div style="display:flex; justify-content:space-between; font-size:1.1rem; font-weight:bold;">
                             <span>Importe Total:</span>
                             <span id="modalFinalTotal" style="color: var(--color-gold);">0,00 €</span>
@@ -439,6 +462,8 @@
         </div>
     </div>
 
+    <script src="i18n.js"></script>
     <script src="app.js"></script>
 </body>
+
 </html>

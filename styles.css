@@ -1642,3 +1642,104 @@ ul {
 .lightbox-next {
     right: 20px;
 }
+
+/* ==========================================
+   LANGUAGE SELECTOR
+   ========================================== */
+.lang-selector {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 12px;
+}
+
+#langSelectorBtn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    color: #ffffff;
+    padding: 7px 14px;
+    border-radius: var(--radius-full);
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition-fast);
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+}
+
+#langSelectorBtn:hover {
+    background: rgba(212, 175, 55, 0.15);
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+}
+
+#langSelectorBtn i {
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+}
+
+#langDropdown.open+#langSelectorBtn i,
+.lang-selector #langDropdown.open~#langSelectorBtn i {
+    transform: rotate(180deg);
+}
+
+#langDropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: var(--color-bg-dark);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: var(--radius-md);
+    min-width: 160px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(212, 175, 55, 0.1);
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2000;
+}
+
+#langDropdown.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 16px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.lang-option:last-child {
+    border-bottom: none;
+}
+
+.lang-option:hover {
+    background: rgba(212, 175, 55, 0.12);
+    color: var(--color-gold);
+    padding-left: 20px;
+}
+
+.lang-option.active {
+    color: var(--color-gold);
+    background: rgba(212, 175, 55, 0.08);
+    font-weight: 700;
+}
+
+.lang-option .lang-flag {
+    font-size: 1.15rem;
+    flex-shrink: 0;
+}

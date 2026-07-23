@@ -46,11 +46,24 @@
             </a>
 
             <nav class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link">Inicio</a>
-                <a href="tienda.html" class="nav-link">Tienda Online</a>
-                <a href="catas.html" class="nav-link">Catas Esporádicas</a>
-                <a href="historia.html" class="nav-link active">Nuestra Historia</a>
-                <a href="contacto.html" class="nav-link">Contacto</a>
+                <a href="index.html" class="nav-link" data-i18n="nav_home">Inicio</a>
+                <a href="tienda.html" class="nav-link" data-i18n="nav_shop">Tienda Online</a>
+                <a href="catas.html" class="nav-link" data-i18n="nav_tastings">Catas Esporádicas</a>
+                <a href="historia.html" class="nav-link active" data-i18n="nav_history">Nuestra Historia</a>
+                <a href="contacto.html" class="nav-link" data-i18n="nav_contact">Contacto</a>
+
+                <!-- Language Selector -->
+                <div class="lang-selector">
+                    <button id="langSelectorBtn" aria-label="Seleccionar idioma">🇪🇸 Español <i
+                            class="ri-arrow-down-s-line"></i></button>
+                    <div id="langDropdown">
+                        <div class="lang-option active" data-lang="es"><span class="lang-flag">🇪🇸</span> Español</div>
+                        <div class="lang-option" data-lang="ca"><span class="lang-flag">🏴</span> Català</div>
+                        <div class="lang-option" data-lang="en"><span class="lang-flag">🇬🇧</span> English</div>
+                        <div class="lang-option" data-lang="fr"><span class="lang-flag">🇫🇷</span> Français</div>
+                        <div class="lang-option" data-lang="ru"><span class="lang-flag">🇷🇺</span> Русский</div>
+                    </div>
+                </div>
             </nav>
 
             <div class="header-actions">
@@ -68,10 +81,12 @@
     <!-- Page Header Banner -->
     <section class="page-banner bg-dark text-center">
         <div class="container">
-            <span class="section-subtitle"><i class="ri-history-line"></i> Tradición & Pasión</span>
-            <h1 class="page-title">Más de 50 años al servicio de El Campello</h1>
-            <p class="section-desc">Fundados en 1975 en la Avenida de la Generalitat 48. La historia de una familia
-                entregada al culto del buen vino y la gastronomía alicantina.</p>
+            <span class="section-subtitle"><i class="ri-history-line"></i> <span data-i18n="history_hero_badge">Desde
+                    1975 en El Campello</span></span>
+            <h1 class="page-title" data-i18n="history_hero_title">Más de 50 Años de Pasión<br><em>por los Vinos de
+                    Alicante</em></h1>
+            <p class="section-desc" data-i18n="history_origins_p1">Fundados en 1975 en la Avenida de la Generalitat 48.
+                La historia de una familia entregada al culto del buen vino y la gastronomía alicantina.</p>
         </div>
     </section>
 
@@ -438,6 +453,7 @@
         </div>
     </div>
 
+    <script src="i18n.js"></script>
     <script src="app.js"></script>
 </body>
 
