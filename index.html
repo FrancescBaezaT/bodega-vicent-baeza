@@ -2,106 +2,133 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script>
+        (() => {
+            document.documentElement.classList.add('i18n-pending');
+            try {
+                const lang = localStorage.getItem('vb_lang');
+                if (['es', 'ca', 'en', 'fr', 'ru'].includes(lang)) document.documentElement.lang = lang;
+            } catch {
+                // i18n.js keeps the default language when storage is unavailable.
+            }
+            window.setTimeout(() => document.documentElement.classList.remove('i18n-pending'), 2000);
+        })();
+    </script>
     <title>Bodega Vicent Baeza | Vinos D.O. Alicante desde 1975</title>
-    <meta name="description"
-        content="Bodega fundada en 1975 en El Campello (Alicante). Venta online a toda España de Vinos D.O. Alicante, Vermouth artesanal, Mistela y productos gourmet.">
-
+    <meta
+        content="Bodega fundada en 1975 en El Campello (Alicante). Venta online a toda España de Vinos D.O. Alicante, Vermouth artesanal, Mistela y productos gourmet."
+        data-i18n-content="page_home_meta" name="description" />
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400&amp;family=Playfair+Display:ital,wght@0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
     <!-- RemixIcon Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <link href="styles.css" rel="stylesheet" />
 </head>
 
-<body>
-
+<body data-page="home">
     <!-- Shipping Bar Announcement -->
     <div class="announcement-bar">
-        <div class="container text-center" data-i18n="announcement">
+        <div class="container text-center" data-i18n-html="announcement">
             <i class="ri-truck-line"></i> <strong>ENVÍO GRATUITO</strong> a toda España peninsular en pedidos superiores
             a 60 € • Entregas en 24-48 horas
         </div>
     </div>
-
     <!-- Header Navigation -->
     <header class="site-header" id="siteHeader">
         <div class="header-container container">
-            <a href="index.html" class="brand-logo">
-                <img src="assets/images/logo.png" alt="Bodega Vicent Baeza" class="logo-img"
-                    onerror="this.style.display='none'">
+            <a class="brand-logo" href="index.html">
+                <img alt="Bodega Vicent Baeza" class="logo-img" data-i18n-alt="logo_alt"
+                    onerror="this.style.display='none'" src="assets/images/logo.png" />
                 <span class="logo-emblem"><i class="ri-goblet-line"></i></span>
                 <div class="logo-text">
                     <span class="brand-name">Bodega Vicent Baeza</span>
-                    <span class="brand-tagline">EL CAMPELLO • ALICANTE • DESDE 1975</span>
+                    <span class="brand-tagline" data-i18n="brand_tagline">EL CAMPELLO • ALICANTE • DESDE 1975</span>
                 </div>
             </a>
-
             <nav class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link active" data-i18n="nav_home">Inicio</a>
-                <a href="tienda.html" class="nav-link" data-i18n="nav_shop">Tienda Online</a>
-                <a href="catas.html" class="nav-link" data-i18n="nav_tastings">Catas Esporádicas</a>
-                <a href="historia.html" class="nav-link" data-i18n="nav_history">Nuestra Historia</a>
-                <a href="contacto.html" class="nav-link" data-i18n="nav_contact">Contacto</a>
-
+                <a class="nav-link active" data-i18n="nav_home" href="index.html">Inicio</a>
+                <a class="nav-link" data-i18n="nav_shop" href="tienda.html">Tienda Online</a>
+                <a class="nav-link" data-i18n="nav_tastings" href="catas.html">Catas Esporádicas</a>
+                <a class="nav-link" data-i18n="nav_history" href="historia.html">Nuestra Historia</a>
+                <a class="nav-link" data-i18n="nav_contact" href="contacto.html">Contacto</a>
                 <!-- Language Selector -->
                 <div class="lang-selector">
-                    <button id="langSelectorBtn" aria-label="Seleccionar idioma">🇪🇸 Español <i
-                            class="ri-arrow-down-s-line"></i></button>
-                    <div id="langDropdown">
-                        <div class="lang-option active" data-lang="es"><span class="lang-flag">🇪🇸</span> Español</div>
-                        <div class="lang-option" data-lang="ca"><span class="lang-flag">🏴</span> Català</div>
-                        <div class="lang-option" data-lang="en"><span class="lang-flag">🇬🇧</span> English</div>
-                        <div class="lang-option" data-lang="fr"><span class="lang-flag">🇫🇷</span> Français</div>
-                        <div class="lang-option" data-lang="ru"><span class="lang-flag">🇷🇺</span> Русский</div>
+                    <button aria-controls="langDropdown" aria-expanded="false" aria-haspopup="listbox"
+                        data-i18n-aria-label="language_selector_label" data-i18n-title="language_selector_label"
+                        id="langSelectorBtn" type="button">
+                        <span aria-hidden="true" class="lang-current-flag lang-flag lang-flag-es">🇪🇸</span>
+                        <span class="lang-current-code">ES</span>
+                        <i aria-hidden="true" class="ri-arrow-down-s-line"></i>
+                    </button>
+                    <div aria-hidden="true" aria-label="Idiomas disponibles" data-i18n-aria-label="language_list_label"
+                        id="langDropdown" inert role="listbox">
+                        <button aria-selected="true" class="lang-option active" data-lang="es" role="option"
+                            tabindex="-1" type="button"><span aria-hidden="true"
+                                class="lang-flag lang-flag-es">🇪🇸</span><span
+                                class="lang-option-name">Español</span><i aria-hidden="true"
+                                class="ri-check-line lang-option-check"></i></button>
+                        <button aria-selected="false" class="lang-option" data-lang="ca" role="option" tabindex="-1"
+                            type="button"><span aria-hidden="true" class="lang-flag lang-flag-senyera"></span><span
+                                class="lang-option-name">Català</span><i aria-hidden="true"
+                                class="ri-check-line lang-option-check"></i></button>
+                        <button aria-selected="false" class="lang-option" data-lang="en" role="option" tabindex="-1"
+                            type="button"><span aria-hidden="true" class="lang-flag lang-flag-en">🇬🇧</span><span
+                                class="lang-option-name">English</span><i aria-hidden="true"
+                                class="ri-check-line lang-option-check"></i></button>
+                        <button aria-selected="false" class="lang-option" data-lang="fr" role="option" tabindex="-1"
+                            type="button"><span aria-hidden="true" class="lang-flag lang-flag-fr">🇫🇷</span><span
+                                class="lang-option-name">Français</span><i aria-hidden="true"
+                                class="ri-check-line lang-option-check"></i></button>
+                        <button aria-selected="false" class="lang-option" data-lang="ru" role="option" tabindex="-1"
+                            type="button"><span aria-hidden="true" class="lang-flag lang-flag-ru">🇷🇺</span><span
+                                class="lang-option-name">Русский</span><i aria-hidden="true"
+                                class="ri-check-line lang-option-check"></i></button>
                     </div>
                 </div>
             </nav>
-
             <div class="header-actions">
-                <button class="cart-trigger-btn" id="cartTriggerBtn" aria-label="Ver Carrito de Compra">
+                <button aria-label="Ver Carrito de Compra" class="cart-trigger-btn"
+                    data-i18n-aria-label="cart_open_label" data-i18n-title="cart_open_label" id="cartTriggerBtn">
                     <i class="ri-shopping-bag-3-line"></i>
                     <span class="cart-badge" id="cartBadgeCount">0</span>
                 </button>
-                <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú">
+                <button aria-label="Abrir menú" class="mobile-toggle" data-i18n-aria-label="menu_open_label"
+                    data-i18n-title="menu_open_label" id="mobileToggle">
                     <i class="ri-menu-3-line"></i>
                 </button>
             </div>
         </div>
     </header>
-
     <!-- Clean Hero Section -->
     <section class="hero-section">
         <div class="hero-bg-wrapper">
-            <img src="assets/images/real/_LNF1237.JPG" alt="Fotos reales Bodega Vicent Baeza El Campello"
-                class="hero-bg-img">
+            <img alt="Fotos reales Bodega Vicent Baeza El Campello" class="hero-bg-img" data-i18n-alt="hero_image_alt"
+                src="assets/images/real/_LNF1237.JPG" />
             <div class="hero-overlay"></div>
         </div>
-
         <div class="hero-content container">
-            <div class="badge-heritage" data-i18n="hero_badge">
-                <i class="ri-map-pin-2-fill"></i> Tradición Alicantina en El Campello desde 1975
+            <div class="badge-heritage"><i aria-hidden="true" class="ri-map-pin-2-fill"></i>
+                <span data-i18n="hero_badge">Tradición alicantina en El Campello desde 1975</span>
             </div>
-            <h1 class="hero-title" data-i18n="hero_title">El auténtico sabor de Alicante,<br><em>directo a tu mesa</em>
+            <h1 class="hero-title" data-i18n-html="hero_title">El auténtico sabor de Alicante,<br /><em>directo a tu
+                    mesa</em>
             </h1>
             <p class="hero-subtitle" data-i18n="hero_subtitle">Vinos D.O. Alicante, Monastrell de autor, Vermouth
                 artesanal de grifo y gastronomía local. Envíos garantizados a toda España.</p>
-
             <div class="hero-buttons">
-                <a href="tienda.html" class="btn btn-gold btn-lg" data-i18n="hero_btn_shop"><i
-                        class="ri-shopping-bag-line"></i> Ir a la Tienda Online</a>
-                <a href="historia.html" class="btn btn-outline btn-lg" data-i18n="hero_btn_history"><i
-                        class="ri-history-line"></i> Nuestra Historia</a>
+                <a class="btn btn-gold btn-lg" href="tienda.html"><i aria-hidden="true"
+                        class="ri-shopping-bag-line"></i> <span data-i18n="hero_btn_shop">Ir a la tienda
+                        online</span></a>
+                <a class="btn btn-outline btn-lg" href="historia.html"><i aria-hidden="true"
+                        class="ri-history-line"></i> <span data-i18n="hero_btn_history">Nuestra historia</span></a>
             </div>
-
             <!-- Features Trust Ribbon -->
             <div class="hero-trust-bar">
                 <div class="trust-item">
@@ -128,22 +155,20 @@
             </div>
         </div>
     </section>
-
     <!-- Short Intro & Heritage Teaser -->
     <section class="section-padding bg-dark text-center">
         <div class="container" style="max-width: 800px;">
             <span class="section-subtitle"><i class="ri-award-line"></i> <span data-i18n="intro_subtitle">Más de 50 años
                     de tradición</span></span>
             <h2 class="section-title" data-i18n="intro_title">Pasión por los Vinos &amp; Productos de la Terreta</h2>
-            <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem; margin: 20px 0 30px;" data-i18n="intro_text">
+            <p data-i18n="intro_text" style="color: rgba(255,255,255,0.8); font-size: 1.1rem; margin: 20px 0 30px;">
                 Desde 1975 seleccionamos personalmente los mejores vinos a granel y embotellados de Alicante, vermouths
                 artesanales, mistelas de Moscatel y delicatessen de nuestra comarca.
             </p>
-            <a href="historia.html" class="btn btn-outline" data-i18n="intro_btn"><i class="ri-arrow-right-line"></i>
-                Conoce Más Sobre Nuestra Historia</a>
+            <a class="btn btn-outline" href="historia.html"><i aria-hidden="true" class="ri-arrow-right-line"></i> <span
+                    data-i18n="intro_btn">Conoce nuestra historia</span></a>
         </div>
     </section>
-
     <!-- Featured Products Preview Section (Only 3 Items for Clean Look) -->
     <section class="section-padding bg-dark-gradient">
         <div class="container">
@@ -153,100 +178,100 @@
                 <h2 class="section-title" data-i18n="featured_title">Los Favoritos de Nuestros Clientes</h2>
                 <div class="gold-separator"><span>◆</span></div>
             </div>
-
             <div class="product-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-
                 <!-- Product 1 -->
-                <div class="product-card">
-                    <div class="product-badge">D.O. Alicante</div>
+                <div class="product-card" data-name-key="product_1_title" data-product-id="p1">
+                    <div class="product-badge" data-i18n="product_1_badge">D.O. Alicante</div>
                     <div class="product-img-box">
-                        <img src="assets/images/real/_LNF1241.JPG" alt="Monastrell Selección Vicent Baeza">
+                        <img alt="Monastrell Selección Vicent Baeza" data-i18n-alt="product_1_title"
+                            src="assets/images/real/_LNF1241.JPG" />
                     </div>
                     <div class="product-info">
-                        <span class="product-sub">Vino Tinto • Monastrell 100%</span>
-                        <h3 class="product-title">Monastrell Selección Vicent Baeza 2020</h3>
-                        <p class="product-desc">Cuerpo mediterráneo, intenso, con aromas de frutos negros maduros y
+                        <span class="product-sub" data-i18n="product_1_sub">Vino Tinto • Monastrell 100%</span>
+                        <h3 class="product-title" data-i18n="product_1_title">Monastrell Selección Vicent Baeza 2020
+                        </h3>
+                        <p class="product-desc" data-i18n="home_product_1_desc">Cuerpo mediterráneo, intenso, con aromas
+                            de frutos negros maduros y
                             toques especiados.</p>
                         <div class="product-footer">
                             <span class="product-price">14,50 €</span>
                             <button class="btn btn-gold btn-sm add-to-cart-btn" data-id="p1"
-                                data-name="Monastrell Selección Vicent Baeza 2020" data-price="14.50"
-                                data-img="assets/images/real/_LNF1241.JPG">
-                                <i class="ri-shopping-cart-line"></i> Añadir
-                            </button>
+                                data-img="assets/images/real/_LNF1241.JPG" data-name-key="product_1_title"
+                                data-price="14.50" type="button"><i aria-hidden="true"
+                                    class="ri-shopping-cart-line"></i> <span
+                                    data-i18n="add_to_cart">Añadir</span></button>
                         </div>
                     </div>
                 </div>
-
                 <!-- Product 2 -->
-                <div class="product-card">
-                    <div class="product-badge gold">Especialidad</div>
+                <div class="product-card" data-name-key="product_2_title" data-product-id="p2">
+                    <div class="product-badge gold" data-i18n="product_2_badge">Especialidad</div>
                     <div class="product-img-box">
-                        <img src="assets/images/real/_LNF1250.JPG" alt="Vermouth Artesanal Rojo">
+                        <img alt="Vermouth Artesanal Rojo" data-i18n-alt="product_2_title"
+                            src="assets/images/real/_LNF1250.JPG" />
                     </div>
                     <div class="product-info">
-                        <span class="product-sub">Vermouth Rojo Artesanal • 1 Litro</span>
-                        <h3 class="product-title">Vermouth Artesanal Rojo de El Campello</h3>
-                        <p class="product-desc">Receta tradicional de la casa con maceración de hierbas autóctonas
+                        <span class="product-sub" data-i18n="product_2_sub">Vermouth Rojo Artesanal • 1 Litro</span>
+                        <h3 class="product-title" data-i18n="product_2_title">Vermouth Artesanal Rojo de El Campello
+                        </h3>
+                        <p class="product-desc" data-i18n="home_product_2_desc">Receta tradicional de la casa con
+                            maceración de hierbas autóctonas
                             alicantinas.</p>
                         <div class="product-footer">
                             <span class="product-price">9,80 €</span>
                             <button class="btn btn-gold btn-sm add-to-cart-btn" data-id="p2"
-                                data-name="Vermouth Artesanal Rojo de El Campello (1L)" data-price="9.80"
-                                data-img="assets/images/real/_LNF1250.JPG">
-                                <i class="ri-shopping-cart-line"></i> Añadir
-                            </button>
+                                data-img="assets/images/real/_LNF1250.JPG" data-name-key="product_2_title"
+                                data-price="9.80" type="button"><i aria-hidden="true" class="ri-shopping-cart-line"></i>
+                                <span data-i18n="add_to_cart">Añadir</span></button>
                         </div>
                     </div>
                 </div>
-
                 <!-- Product 3 -->
-                <div class="product-card">
-                    <div class="product-badge">Dulce Alicante</div>
+                <div class="product-card" data-name-key="product_3_title" data-product-id="p3">
+                    <div class="product-badge" data-i18n="product_3_badge">Dulce Alicante</div>
                     <div class="product-img-box">
-                        <img src="assets/images/real/_LNF1260.JPG" alt="Mistela Dorada Moscatel">
+                        <img alt="Mistela Dorada Moscatel" data-i18n-alt="product_3_title"
+                            src="assets/images/real/_LNF1260.JPG" />
                     </div>
                     <div class="product-info">
-                        <span class="product-sub">Mistela Licorosa • Moscatel</span>
-                        <h3 class="product-title">Mistela Dorada Moscatel de la Marina</h3>
-                        <p class="product-desc">Dulce natural inolvidable, perfume de flor de azahar, miel y pasas de la
+                        <span class="product-sub" data-i18n="product_3_sub">Mistela Licorosa • Moscatel</span>
+                        <h3 class="product-title" data-i18n="product_3_title">Mistela Dorada Moscatel de la Marina</h3>
+                        <p class="product-desc" data-i18n="home_product_3_desc">Dulce natural inolvidable, perfume de
+                            flor de azahar, miel y pasas de la
                             comarca.</p>
                         <div class="product-footer">
                             <span class="product-price">11,20 €</span>
                             <button class="btn btn-gold btn-sm add-to-cart-btn" data-id="p3"
-                                data-name="Mistela Dorada Moscatel de la Marina" data-price="11.20"
-                                data-img="assets/images/real/_LNF1260.JPG">
-                                <i class="ri-shopping-cart-line"></i> Añadir
-                            </button>
+                                data-img="assets/images/real/_LNF1260.JPG" data-name-key="product_3_title"
+                                data-price="11.20" type="button"><i aria-hidden="true"
+                                    class="ri-shopping-cart-line"></i> <span
+                                    data-i18n="add_to_cart">Añadir</span></button>
                         </div>
                     </div>
                 </div>
-
             </div>
-
             <div class="text-center" style="margin-top: 50px;">
-                <a href="tienda.html" class="btn btn-gold btn-lg"><i class="ri-store-2-line"></i> Ver Catálogo Completo
-                    en la Tienda Online</a>
+                <a class="btn btn-gold btn-lg" href="tienda.html"><i aria-hidden="true" class="ri-store-2-line"></i>
+                    <span data-i18n="view_all_products">Ver el catálogo completo</span></a>
             </div>
         </div>
     </section>
-
     <!-- Tastings & Visit Teaser Banner -->
     <section class="section-padding bg-dark">
         <div class="container text-center">
             <span class="section-subtitle"><i class="ri-calendar-event-line"></i> <span
                     data-i18n="tastings_teaser_subtitle">Experiencias Exclusivas</span></span>
             <h2 class="section-title" data-i18n="tastings_teaser_title">Catas Esporádicas en Bodega</h2>
-            <p style="color: rgba(255,255,255,0.75); max-width: 650px; margin: 15px auto 30px;"
-                data-i18n="tastings_teaser_text">
+            <p data-i18n="tastings_teaser_text"
+                style="color: rgba(255,255,255,0.75); max-width: 650px; margin: 15px auto 30px;">
                 Organizamos catas de maridaje puntuales en nuestra bodega de El Campello. Inscríbete en nuestra lista
                 VIP para ser el primero en saberlo.
             </p>
-            <a href="catas.html" class="btn btn-outline btn-lg" data-i18n="tastings_teaser_btn"><i
-                    class="ri-calendar-event-line"></i> Ver Próximas Catas</a>
+            <a class="btn btn-outline btn-lg" href="catas.html"><i aria-hidden="true"
+                    class="ri-calendar-event-line"></i> <span data-i18n="tastings_teaser_btn">Ver próximas
+                    catas</span></a>
         </div>
     </section>
-
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container footer-container">
@@ -256,148 +281,151 @@
                 <p data-i18n="footer_tagline">El Campello, Alicante. Pasión por nuestros vinos y productos tradicionales
                     desde 1975.</p>
             </div>
-
             <div class="footer-links">
                 <h4 data-i18n="footer_nav_title">Navegación</h4>
                 <ul>
-                    <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
-                    <li><a href="tienda.html" data-i18n="nav_shop">Tienda Online</a></li>
-                    <li><a href="catas.html" data-i18n="nav_tastings">Catas Esporádicas</a></li>
-                    <li><a href="historia.html" data-i18n="nav_history">Nuestra Historia</a></li>
-                    <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
+                    <li><a data-i18n="nav_home" href="index.html">Inicio</a></li>
+                    <li><a data-i18n="nav_shop" href="tienda.html">Tienda Online</a></li>
+                    <li><a data-i18n="nav_tastings" href="catas.html">Catas Esporádicas</a></li>
+                    <li><a data-i18n="nav_history" href="historia.html">Nuestra Historia</a></li>
+                    <li><a data-i18n="nav_contact" href="contacto.html">Contacto</a></li>
                 </ul>
             </div>
-
             <div class="footer-social">
                 <h4 data-i18n="footer_contact_title">Contacto</h4>
-                <p style="font-size: 0.85rem; margin-bottom: 15px;">Av. Generalitat 48, 03560 El Campello • Tel: 96 563
-                    02 53</p>
+                <p data-i18n="footer_address" style="font-size: 0.85rem; margin-bottom: 15px;">Av. Generalitat 48, 03560
+                    El Campello • Tel: 96 563 02 53</p>
                 <div class="social-icons">
-                    <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
-                    <a href="#" aria-label="Facebook"><i class="ri-facebook-circle-line"></i></a>
-                    <a href="#" aria-label="WhatsApp"><i class="ri-whatsapp-line"></i></a>
+                    <a aria-label="Instagram" data-i18n-aria-label="social_instagram_label"
+                        data-i18n-title="social_instagram_label" href="#"><i class="ri-instagram-line"></i></a>
+                    <a aria-label="Facebook" data-i18n-aria-label="social_facebook_label"
+                        data-i18n-title="social_facebook_label" href="#"><i class="ri-facebook-circle-line"></i></a>
+                    <a aria-label="WhatsApp" data-i18n-aria-label="social_whatsapp_label"
+                        data-i18n-title="social_whatsapp_label" href="#"><i class="ri-whatsapp-line"></i></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom text-center">
-            <p>&copy; 1975 - 2026 Bodega Vicent Baeza (El Campello, Alicante). Todos los derechos reservados.</p>
+            <p data-i18n="footer_rights">© 1975 - 2026 Bodega Vicent Baeza (El Campello, Alicante). Todos los derechos
+                reservados.</p>
         </div>
     </footer>
-
     <!-- SLIDE-OUT CART DRAWER -->
-    <div class="cart-drawer-overlay" id="cartOverlay">
+    <div aria-hidden="true" aria-labelledby="cartDrawerTitle" aria-modal="true" class="cart-drawer-overlay"
+        id="cartOverlay" role="dialog">
         <div class="cart-drawer" id="cartDrawer">
             <div class="cart-drawer-header">
-                <h3><i class="ri-shopping-bag-3-line"></i> Carrito de Compra</h3>
-                <button class="cart-close-btn" id="cartCloseBtn">&times;</button>
+                <h3 id="cartDrawerTitle"><i aria-hidden="true" class="ri-shopping-bag-3-line"></i> <span
+                        data-i18n="cart_title">Carrito de compra</span></h3>
+                <button class="cart-close-btn" data-i18n-aria-label="cart_close_label"
+                    data-i18n-title="cart_close_label" id="cartCloseBtn" type="button">×</button>
             </div>
-
             <div class="free-shipping-bar">
-                <p id="freeShippingText">¡Añade <strong>60,00 €</strong> más para <strong>ENVÍO GRATUITO</strong> a
-                    España!</p>
+                <p aria-live="polite" data-i18n-html="cart_free_shipping_initial" id="freeShippingText">¡Añade
+                    <strong>60,00 €</strong> más para <strong>ENVÍO GRATUITO</strong> a
+                    España!
+                </p>
                 <div class="progress-bar-bg">
                     <div class="progress-bar-fill" id="shippingProgressFill" style="width: 0%;"></div>
                 </div>
             </div>
-
-            <div class="cart-items-list" id="cartItemsList"></div>
-
+            <div aria-live="polite" class="cart-items-list" id="cartItemsList"></div>
             <div class="cart-drawer-footer">
                 <div class="cart-summary-line">
-                    <span>Subtotal:</span>
+                    <span data-i18n="cart_subtotal">Subtotal:</span>
                     <strong id="cartSubtotal">0,00 €</strong>
                 </div>
                 <div class="cart-summary-line">
-                    <span>Gastos de Envío:</span>
+                    <span data-i18n="cart_shipping">Gastos de Envío:</span>
                     <span id="cartShippingCost">4,95 €</span>
                 </div>
                 <div class="cart-summary-line total-line">
-                    <span>TOTAL A PAGAR:</span>
+                    <span data-i18n="cart_total">TOTAL A PAGAR:</span>
                     <strong id="cartGrandTotal">0,00 €</strong>
                 </div>
-                <button class="btn btn-gold btn-block btn-lg" id="checkoutBtn" disabled>
-                    <i class="ri-lock-2-line"></i> Tramitar Pedido Seguro
-                </button>
+                <button class="btn btn-gold btn-block btn-lg" disabled="" id="checkoutBtn"><i aria-hidden="true"
+                        class="ri-lock-2-line"></i> <span data-i18n="cart_checkout">Tramitar pedido
+                        seguro</span></button>
             </div>
         </div>
     </div>
-
     <!-- CHECKOUT MODAL -->
-    <div class="modal-overlay" id="checkoutModal">
+    <div aria-hidden="true" aria-labelledby="checkoutModalTitle" aria-modal="true" class="modal-overlay"
+        id="checkoutModal" role="dialog">
         <div class="modal-card" style="max-width: 650px;">
-            <button class="modal-close" id="checkoutModalClose">&times;</button>
+            <button class="modal-close" data-i18n-aria-label="checkout_close_label"
+                data-i18n-title="checkout_close_label" id="checkoutModalClose" type="button">×</button>
             <div class="modal-body" style="padding: 35px; color: #fff;">
                 <div class="modal-header-custom text-center" style="margin-bottom: 25px;">
-                    <h3 style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-gold);">
-                        <i class="ri-shield-check-line"></i> Finalizar Pedido - Bodega Vicent Baeza
-                    </h3>
-                    <p style="font-size: 0.9rem; color: var(--color-text-light-muted);">Envíos a toda España en 24-48
+                    <h3 id="checkoutModalTitle"
+                        style="font-family: var(--font-heading); font-size: 1.8rem; color: var(--color-gold);"><i
+                            aria-hidden="true" class="ri-shield-check-line"></i> <span
+                            data-i18n="checkout_title">Finalizar pedido — Bodega Vicent Baeza</span></h3>
+                    <p data-i18n="checkout_subtitle" style="font-size: 0.9rem; color: var(--color-text-light-muted);">
+                        Envíos a toda España en 24-48
                         horas.</p>
                 </div>
-
-                <form id="checkoutForm" class="checkout-form">
+                <form class="checkout-form" id="checkoutForm">
                     <div class="form-grid">
                         <div class="form-group">
-                            <label>Nombre y Apellidos</label>
-                            <input type="text" id="shipName" class="form-control" placeholder="Ej. Pedro Pérez"
-                                required>
+                            <label data-i18n="checkout_name_label" for="shipName">Nombre y Apellidos</label>
+                            <input class="form-control" data-i18n-placeholder="checkout_name_placeholder" id="shipName"
+                                placeholder="Ej. Pedro Pérez" required="" type="text" />
                         </div>
                         <div class="form-group">
-                            <label>Correo Electrónico</label>
-                            <input type="email" id="shipEmail" class="form-control" placeholder="pedro@ejemplo.com"
-                                required>
+                            <label data-i18n="checkout_email_label" for="shipEmail">Correo Electrónico</label>
+                            <input class="form-control" data-i18n-placeholder="checkout_email_placeholder"
+                                id="shipEmail" placeholder="pedro@ejemplo.com" required="" type="email" />
                         </div>
                         <div class="form-group">
-                            <label>Teléfono</label>
-                            <input type="tel" id="shipPhone" class="form-control" placeholder="+34 600 000 000"
-                                required>
+                            <label data-i18n="checkout_phone_label" for="shipPhone">Teléfono</label>
+                            <input class="form-control" data-i18n-placeholder="checkout_phone_placeholder"
+                                id="shipPhone" placeholder="+34 600 000 000" required="" type="tel" />
                         </div>
                         <div class="form-group">
-                            <label>Código Postal</label>
-                            <input type="text" id="shipZip" class="form-control" placeholder="Ej: 03560" required>
+                            <label data-i18n="checkout_zip_label" for="shipZip">Código Postal</label>
+                            <input class="form-control" data-i18n-placeholder="checkout_zip_placeholder" id="shipZip"
+                                placeholder="Ej: 03560" required="" type="text" />
                         </div>
                     </div>
-
                     <div class="form-group" style="margin-top: 15px;">
-                        <label>Dirección de Envío Completa (España)</label>
-                        <input type="text" id="shipAddress" class="form-control" placeholder="Calle, Número, Piso..."
-                            required>
+                        <label data-i18n="checkout_address_label" for="shipAddress">Dirección de Envío Completa
+                            (España)</label>
+                        <input class="form-control" data-i18n-placeholder="checkout_address_placeholder"
+                            id="shipAddress" placeholder="Calle, Número, Piso..." required="" type="text" />
                     </div>
-
                     <div class="form-group" style="margin-top: 15px;">
-                        <label>Método de Pago Preferido</label>
-                        <select id="shipPayment" class="form-control">
-                            <option value="card">💳 Tarjeta de Crédito / Débito (Visa, Mastercard)</option>
-                            <option value="bizum">📱 Bizum (Pago Inmediato)</option>
-                            <option value="transfer">🏦 Transferencia Bancaria</option>
+                        <label data-i18n="checkout_payment_label" for="shipPayment">Método de Pago Preferido</label>
+                        <select class="form-control" id="shipPayment">
+                            <option data-i18n="checkout_payment_card" value="card">💳 Tarjeta de Crédito / Débito (Visa,
+                                Mastercard)</option>
+                            <option data-i18n="checkout_payment_bizum" value="bizum">📱 Bizum (Pago Inmediato)</option>
+                            <option data-i18n="checkout_payment_transfer" value="transfer">🏦 Transferencia Bancaria
+                            </option>
                         </select>
                     </div>
-
                     <div class="checkout-summary-box"
                         style="margin-top: 20px; background: rgba(0,0,0,0.3); padding: 15px; border-radius: 8px; border: 1px solid var(--color-gold);">
                         <div style="display:flex; justify-content:space-between; font-size:1.1rem; font-weight:bold;">
-                            <span>Importe Total:</span>
+                            <span data-i18n="checkout_total_label">Importe Total:</span>
                             <span id="modalFinalTotal" style="color: var(--color-gold);">0,00 €</span>
                         </div>
                     </div>
-
-                    <button type="submit" class="btn btn-gold btn-block btn-lg" style="margin-top: 20px;">
-                        <i class="ri-check-double-line"></i> Confirmar y Realizar Pedido
-                    </button>
+                    <button class="btn btn-gold btn-block btn-lg" style="margin-top: 20px;" type="submit"><i
+                            aria-hidden="true" class="ri-check-double-line"></i> <span
+                            data-i18n="checkout_submit">Confirmar y realizar pedido</span></button>
                 </form>
             </div>
         </div>
     </div>
-
     <!-- Toast Notification -->
-    <div class="toast-notification" id="toastNotification">
+    <div aria-hidden="true" aria-live="polite" class="toast-notification" id="toastNotification" role="status">
         <i class="ri-checkbox-circle-fill"></i>
         <div class="toast-text">
-            <h4 id="toastTitle">Producto Añadido</h4>
-            <p id="toastMsg">Tu selección ha sido agregada al carrito.</p>
+            <h4 id="toastTitle"></h4>
+            <p id="toastMsg"></p>
         </div>
     </div>
-
     <script src="i18n.js"></script>
     <script src="app.js"></script>
 </body>
